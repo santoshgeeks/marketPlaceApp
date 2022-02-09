@@ -1,0 +1,338 @@
+input[type='text'] {
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #116e51;
+    background: #282828;
+    color: white;
+    width: 100%;
+    padding-left: 0;
+}
+
+.date {
+    position: relative;
+
+    .fa-calendar-o {
+        position: absolute;
+        right: 0;
+        color: #c7b338;
+        right: 0px;
+        bottom: 6px;
+        font-size: 20px;
+    }
+}
+
+.filte {
+    position: relative;
+
+    .fa-filter {
+        position: absolute;
+        right: 12px;
+        color: gray;
+        font-size: 20px;
+    }
+}
+.week{
+    width: 168px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background: #282828;
+}
+
+.weekDetails {
+    text-align: center;
+    margin-right: 18px;
+
+    .weeksText {
+        color: white;
+        text-transform: uppercase;
+        border-top: 2px solid #116e51;
+        border-bottom: 2px solid #116e51;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 3px;
+        font-weight: 500;
+    }
+
+}
+
+.selectWeekButton {
+    height: 54vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .buttons {
+        text-align: center;
+        width: 100%;
+
+        button {
+            background: #4a4a4a;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: 120px;
+            color: gray;
+        }
+
+        button:active {
+            background: #c7b338;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: 120px;
+            color: white;
+        }
+        .active{
+            background: #c7b338;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: 120px;
+            color: white;
+        }
+        button:focus {
+            background: #c7b338;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: 120px;
+            color: white;
+        }
+
+        button:hover {
+            background: #c7b338;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: 120px;
+            color: white;
+        }
+    }
+
+}
+
+.tableCol {
+    height: 69vh;
+    overflow-y: auto;
+    position: relative;
+    .setPositionAtbottomOfTable{
+        position: sticky;
+        bottom: 0;
+        background: #282828;
+    }
+}
+
+::ng-deep.mat-table {
+    background: #373737;
+
+    thead {
+        background: #116e51;
+        position: sticky;
+        top: 0;
+
+        tr.mat-header-row {
+            height: 41px;
+
+            .mat-header-cell {
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                color: white;
+                font-weight: 600;
+                letter-spacing: 1px;
+                font-size: 13px;
+            }
+        }
+    }
+
+    tbody {
+
+        tr.mat-row,
+        tr.mat-footer-row {
+            height: 38.5px;
+           
+        }
+        
+        tr {
+            td {
+                color: gray;
+                border-bottom: 1px solid gray;
+            }
+        }
+    }
+}
+tr.mat-row:hover{
+    background: #ffe64f;
+    color: white;
+}
+.disable{
+    background: #c9c9c9;
+    pointer-events: none;
+}
+
+mat-paginator {
+    background: #282828;
+    color: white;
+
+    ::ng-deep .mat-select-value {
+        color: white;
+    }
+
+    ::ng-deep .mat-select-arrow {
+        color: white;
+    }
+
+    ::ng-deep .mat-button.mat-primary.mat-button-disabled,
+    .mat-button.mat-accent.mat-button-disabled,
+    .mat-button.mat-warn.mat-button-disabled,
+    .mat-button.mat-button-disabled.mat-button-disabled,
+    .mat-icon-button.mat-primary.mat-button-disabled,
+    .mat-icon-button.mat-accent.mat-button-disabled,
+    .mat-icon-button.mat-warn.mat-button-disabled,
+    .mat-icon-button.mat-button-disabled.mat-button-disabled,
+    .mat-stroked-button.mat-primary.mat-button-disabled,
+    .mat-stroked-button.mat-accent.mat-button-disabled,
+    .mat-stroked-button.mat-warn.mat-button-disabled,
+    .mat-stroked-button.mat-button-disabled.mat-button-disabled {
+        color: white;
+    }
+
+    ::ng-deep .mat-icon-button.mat-button-disabled.mat-button-disabled {
+        color: rgb(224 224 224 / 26%);
+    }
+
+    ::ng-deep .mat-paginator-range-label {
+        order: 2;
+    }
+
+    ::ng-deep .mat-paginator-navigation-previous {
+        order: 0;
+    }
+
+    ::ng-deep .mat-paginator-navigation-next {
+        order: 0;
+    }
+}
+
+:host ::ng-deep.mat-paginator .mat-paginator-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: -12px;
+}
+
+.pluseButton {
+    background: #c7b338;
+    color: white;
+    outline: none;
+    border: navajowhite;
+    border-radius: 5px;
+    color: #282828;
+    font-weight: 600;
+}
+
+.yllowButton {
+    background: #c7b338;
+    outline: none;
+    border: navajowhite;
+    border-radius: 5px;
+    color: #282828;
+    font-weight: 400;
+    height: 30px;
+}
+
+.greenButton {
+    background: #116e51;
+    outline: none;
+    border: #116e51;
+    border-radius: 5px;
+    color: white;
+    font-weight: 400;
+    height: 33px;
+    padding: 0px 20px 0px 20px;
+}
+
+.yellowRoundButton {
+    background: #282828;
+    outline: none;
+    border: 1px solid #c7b338;
+    border-radius: 5px;
+    color: #c7b338;
+    font-weight: 400;
+    height: 33px;
+    padding: 0px 20px 0px 20px;
+}
+
+.yellowRoundButton:hover {
+    background: #c7b338;
+    outline: none;
+    border: 1px solid #282828;
+    border-radius: 5px;
+    color: #282828;
+    font-weight: 400;
+    height: 33px;
+    padding: 0px 20px 0px 20px;
+}
+
+.averageItem {
+    color: white;
+    font-size: 14px;
+}
+
+.remainValuetext {
+    color: white;
+    font-size: 14px;
+}
+
+.averageItem {
+    color: white;
+}
+
+.rvalue {
+    color: #116e51;
+    margin-left: 16px;
+    font-weight: 600;
+}
+
+.avalue {
+    color: #116e51;
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+.actors {
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    border-bottom: 1px solid gray;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: white;
+}
+.nodata{
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}

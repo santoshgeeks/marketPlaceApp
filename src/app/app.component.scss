@@ -1,0 +1,132 @@
+.brandName {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+mat-toolbar {
+    .user {
+        margin-left: auto;
+        padding-right: 20px;
+        cursor: pointer;
+        font-size: 30px;
+
+        .fa-bell {
+            font-size: 24px;
+        }
+    }
+
+    .fa-home {
+        font-size: 24px;
+    }
+
+    .fa-building {
+        font-size: 24px;
+    }
+
+    .userProfile {
+        width: 35px;
+        height: 35px;
+        display: inline-block;
+        border-radius: 50%;
+
+        img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+    }
+}
+
+.matMenuIcons {
+    float: right;
+    margin-top: 12px;
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+.container {
+    .sidenav {
+        padding: 10px 0px 10px 0px;
+        min-width: 200px;
+        overflow-y: auto;
+        border-top: 2px solid white;
+    }
+
+    .sidenav-content {
+        overflow-y: auto;
+    }
+
+    ::ng-deep .mat-drawer-content {
+        // height: 90vh !important;
+    }
+
+    .nav-items {
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        letter-spacing: 2.5px;
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+    }
+
+    .nav-items-active {
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        background: #c7b338;
+    }
+
+    .nav-items-active:hover {
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+    }
+
+    .nav-items:hover {
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        letter-spacing: 2.5px;
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        background: #c7b338;
+    }
+
+}
+
+.footer {
+    font-size: 14px;
+    font-weight: 400;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    bottom: 0px;
+    display: flex;
+    .footerItemsSupport{
+        display: flex;
+        color: white;
+        .text{
+            padding: 10px;
+            cursor: pointer;
+        }
+    }
+    .footerItemsCopyRight{
+        display: flex;
+        color: #c7b338;
+    }
+}
+
+.mat-elevation-z5 {
+    position: relative;
+    z-index: 2;
+    box-shadow: 5px 3px 3px 0px rgb(0 0 0 / 6%), 0px 5px 8px -7px rgb(0 0 0 / 7%), 0px -1px 0px 0px rgb(0 0 0 / 14%);
+
+    mat-icon {
+        font-size: 30px;
+        font-weight: 600;
+    }
+}

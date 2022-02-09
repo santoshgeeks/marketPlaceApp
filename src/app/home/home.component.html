@@ -1,0 +1,146 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="row mt-4 mb-3">
+            <div class="col-5 date pe-0">
+                <input readonly type="text" value="week 2, Novenber 2022" [(ngModel)]="selectedweekAndMonth"
+                [ngModelOptions]="{standalone:true}">
+                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+            </div>
+            <div class="col-5 filte">
+                <i class="fa fa-filter" aria-hidden="true"></i>
+                <input type="text" [(ngModel)]="filterEvent" [ngModelOptions]="{standalone:true}" (keyup)="applyFilter($event)" placeholder="Filter By Items">
+            </div>
+        </div>
+        <div class="row mt-2 position-relative">
+            <div class="week pe-0">
+                <div class="row weekDetails">
+                    <div class="weeksText">Select Weeks</div>
+                </div>
+                <div class="row selectWeekButton me-2">
+                    <div class="buttons">
+                        <button [ngClass]="{'active': button.isWeekSelected}"
+                         *ngFor="let button of weekWiseData; let i=index" 
+                        (click)="selectWeek(button, i)"
+                         class="my-2"> {{button.weekName}} </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 ps-0 tableCol">
+                <table mat-table [dataSource]="dataSource1" class="w-100">
+                    <ng-container matColumnDef="channel">
+                        <th mat-header-cell *matHeaderCellDef> Channel </th>
+                        <td mat-cell *matCellDef="let element"  [ngClass]="{'disable': element.selected}"> {{element.channel}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="item">
+                        <th mat-header-cell *matHeaderCellDef> Item </th>
+                        <td mat-cell *matCellDef="let element"  [ngClass]="{'disable': element.selected}"> {{element.item}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="office">
+                        <th mat-header-cell *matHeaderCellDef> Office </th>
+                        <td mat-cell *matCellDef="let element" [ngClass]="{'disable': element.selected}" > {{element.office}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="postal">
+                        <th mat-header-cell *matHeaderCellDef> Postal </th>
+                        <td mat-cell *matCellDef="let element" [ngClass]="{'disable': element.selected}" > {{element.postal}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="cripto">
+                        <th mat-header-cell *matHeaderCellDef> Cripto </th>
+                        <td mat-cell *matCellDef="let element" [ngClass]="{'disable': element.selected}" > {{element.cripto}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="budget">
+                        <th mat-header-cell *matHeaderCellDef> $$ </th>
+                        <td mat-cell *matCellDef="let element"
+                         [ngClass]="{'disable': element.selected}" > {{element.budget}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="action">
+                        <th mat-header-cell *matHeaderCellDef> </th>
+                        <td mat-cell  [ngClass]="{'disable': element.selected}" *matCellDef="let element; let i=index" style="text-align: end;">
+                            <button class="pluseButton" (click)="addIntoVertualBasket(element,i)">+</button>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+                </table>
+                <div class="nodata" *ngIf="weekWiseTable.length==0">
+                    Please select week
+                </div>
+            </div>
+            <div class="col-md-12">
+                <mat-paginator [pageSizeOptions]="[10,15, 20]" showFirstLastButtons
+                
+                (page)="pageEvent = $event; onPaginateChange($event)">
+                </mat-paginator>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row mt-3">
+            <div class="col-md-3">
+                <div class="row mt-2">
+                    <input type="text" placeholder="Basket Name">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="m-0">
+                    <span class="remainValuetext">Remaining Value:</span>
+                    <span class="rvalue">${{remainingValue | number : '1.2-2'}}</span>
+                </p>
+                <p>
+                    <span class="averageItem">Average $ Per Item:</span>
+                    <span class="avalue">${{avgPerItem | number : '1.2-2'}}</span>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <button class="my-2 yllowButton" (click)="clearFilter()">Clear Filter</button>
+                </div>
+
+            </div>
+
+            <div class="col-12 ps-0 tableCol">
+                <table mat-table [dataSource]="dataSource2" class="w-100">
+                    <ng-container matColumnDef="channel">
+                        <th mat-header-cell *matHeaderCellDef> Channel </th>
+                        <td mat-cell *matCellDef="let element" > {{element.channel}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="item">
+                        <th mat-header-cell *matHeaderCellDef> Item </th>
+                        <td mat-cell *matCellDef="let element"> {{element.item}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="office">
+                        <th mat-header-cell *matHeaderCellDef> Office </th>
+                        <td mat-cell *matCellDef="let element"> {{element.office}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="postal">
+                        <th mat-header-cell *matHeaderCellDef> Postal </th>
+                        <td mat-cell *matCellDef="let element"> {{element.postal}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="cripto">
+                        <th mat-header-cell *matHeaderCellDef> Cripto </th>
+                        <td mat-cell *matCellDef="let element"> {{element.cripto}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="budget">
+                        <th mat-header-cell *matHeaderCellDef> $$ </th>
+                        <td mat-cell *matCellDef="let element">
+                             {{element.budget}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="action">
+                        <th mat-header-cell *matHeaderCellDef> </th>
+                        <td mat-cell *matCellDef="let element; let i=index" style="text-align: end;">
+                            <button class="pluseButton" >+</button>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+                </table>
+                <div class="row mt-3 setPositionAtbottomOfTable">
+                    <div class="col-md-12 p-0 text-end">
+                        <button class="yellowRoundButton" (click)="clear()">Clear</button>
+                        <button class="greenButton ms-2">Submit</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

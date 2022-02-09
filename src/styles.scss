@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; }
+*{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.greenColor{
+    color: #116e51;
+}
+.yellowColor{
+    color: #c7b338;
+}
+.whiteColor{
+    color: #fcfdfd;
+}
+.bgDark{
+    background:#282828;
+}
+.bgLightDark{
+    background: #4a4a4a;
+}
+.bgGreen{
+    background: #116e51;
+}
+.bgYellow{
+    background: #c7b338;
+}
+.bgFooter{
+    background: #1c1c1c;
+}
+.tableRowBg{
+    background: #373737;
+}
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #b3b1b1;
+    border-radius: 5px
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
