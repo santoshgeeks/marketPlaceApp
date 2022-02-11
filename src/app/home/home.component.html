@@ -4,7 +4,7 @@
             <div class="col-5 date pe-0">
                 <input readonly type="text" value="week 2, Novenber 2022" [(ngModel)]="selectedweekAndMonth"
                 [ngModelOptions]="{standalone:true}">
-                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                <i class="fa fa-calendar-o" (click)="weekSelection=!weekSelection" aria-hidden="true"></i>
             </div>
             <div class="col-5 filte">
                 <i class="fa fa-filter" aria-hidden="true"></i>
@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="row mt-2 position-relative">
-            <div class="week pe-0">
+            <div class="week pe-0" *ngIf="weekSelection">
                 <div class="row weekDetails">
                     <div class="weeksText">Select Weeks</div>
                 </div>
@@ -20,7 +20,7 @@
                     <div class="buttons">
                         <button [ngClass]="{'active': button.isWeekSelected}"
                          *ngFor="let button of weekWiseData; let i=index" 
-                        (click)="selectWeek(button, i)"
+                        (click)="selectWeek(button, i); weekSelection=!weekSelection"
                          class="my-2"> {{button.weekName}} </button>
                     </div>
                 </div>

@@ -12,6 +12,7 @@ import { PopupComponent } from '../popup/popup.component';
 export class HomeComponent implements OnInit {
   avgPerItem = 1000
   remainingValue = 0
+  weekSelection=false
   weekWiseData: any = [
     {
       weekName: "Week 1", isWeekSelected: false, data: [
@@ -153,6 +154,7 @@ export class HomeComponent implements OnInit {
       }
     }
     this.weekWiseData[index].isWeekSelected = true
+    this.clear()
   }
   calculations(data: any) {
     for(let i=0; i<this.weekWiseTable.length; i++){

@@ -24,9 +24,11 @@ mat-toolbar {
     }
 
     .userProfile {
-        width: 35px;
-        height: 35px;
-        display: inline-block;
+        font-size: 16px;
+        background: #8b8b8b;
+        padding: 10px 5px 10px 2px;
+        color: #eff4f2;
+        font-weight: bold;
         border-radius: 50%;
 
         img {
@@ -106,15 +108,18 @@ mat-toolbar {
     position: sticky;
     bottom: 0px;
     display: flex;
-    .footerItemsSupport{
+
+    .footerItemsSupport {
         display: flex;
         color: white;
-        .text{
+
+        .text {
             padding: 10px;
             cursor: pointer;
         }
     }
-    .footerItemsCopyRight{
+
+    .footerItemsCopyRight {
         display: flex;
         color: #c7b338;
     }
