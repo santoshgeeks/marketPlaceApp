@@ -20,6 +20,7 @@ input[type='text'] {
         right: 0px;
         bottom: 6px;
         font-size: 20px;
+        cursor: pointer;
     }
 }
 
@@ -161,7 +162,7 @@ input[type='text'] {
         
         tr {
             td {
-                color: gray;
+                color: white;
                 border-bottom: 1px solid gray;
                 font-size: 16px;
             }

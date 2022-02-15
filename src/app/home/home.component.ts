@@ -16,12 +16,13 @@ export class HomeComponent implements OnInit {
   weekWiseData: any = [
     {
       weekName: "Week 1", isWeekSelected: false, data: [
-        { id:"ID1week1", channel: "01", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID2week1", channel: "01", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID3week1", channel: "01", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID4week1", channel: "01", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID5week1", channel: "01", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID6week1", channel: "01", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID1week1", channel: "01", item: "Actor1",
+         selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID2week1", channel: "01", item: "Actor2", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID3week1", channel: "01", item: "Acto3", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID4week1", channel: "01", item: "Actor4", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID5week1", channel: "01", item: "Actor5", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID6week1", channel: "01", item: "Actor6", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
         { id:"ID7week1", channel: "02", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
         { id:"ID8week1", channel: "02", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
         { id:"ID9week1", channel: "02", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
@@ -30,15 +31,26 @@ export class HomeComponent implements OnInit {
         { id:"ID12week1", channel: "03", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
         { id:"ID13week1", channel: "03", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
         { id:"ID14week1", channel: "03", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        
         { id:"ID15week1", channel: "04", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
         { id:"ID16week1", channel: "04", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
         { id:"ID17week1", channel: "04", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID18week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID19week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID18week1", channel: "04", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID19week1", channel: "04", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        
         { id:"ID20week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID21week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID22week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID23week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID21week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID22week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID23week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID24week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        
+        { id:"ID25week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID26week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID27week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID28week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID29week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID30week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+      
       ]
     },
     {
@@ -171,10 +183,122 @@ export class HomeComponent implements OnInit {
     this.resetPagination()
     for (let i = 0; i < this.weekWiseTable.length; i++) {
       if (data.channel == this.weekWiseTable[i].channel) {
-        console.log(this.weekWiseTable[i].selected = true);
+        this.weekWiseTable[i].selected = true
       }
     }
-
+  }
+  enableIfLessThan3(data: any) {
+    for (let i = 0; i < this.weekWiseTable.length; i++) {
+      if (data.channel == this.weekWiseTable[i].channel) {
+        this.weekWiseTable[i].selected = false
+      }
+    }
+  }
+  RemoveElementFromArray(channel:any,element: any) {
+    channel.forEach((value:any,index:any)=>{
+        if(value==element) 
+        channel.splice(index,1);
+    });
+}
+  removeBasket(index:any,data:any){
+    for(let i=0; i<this.channel1.length; i++){
+      if(this.channel1[i].id==this.vertualBasket[index].id){
+        this.remainingValue=this.remainingValue+this.channel1[i].budget
+        this.channel1.splice(i,1)
+      }
+    }
+   for(let i=0; i<this.channel2.length; i++){
+      if(this.channel2[i].id==this.vertualBasket[index].id){
+        this.remainingValue=this.remainingValue+this.channel2[i].budget
+        this.channel2.splice(i,1)
+      }
+    }
+    for(let i=0; i<this.channel3.length; i++){
+      if(this.channel3[i].id==this.vertualBasket[index].id){
+        this.remainingValue=this.remainingValue+this.channel3[i].budget
+        this.channel3.splice(i,1)
+      }
+    }
+    for(let i=0; i<this.channel4.length; i++){
+      if(this.channel4[i].id==this.vertualBasket[index].id){
+        this.remainingValue=this.remainingValue+this.channel4[i].budget
+        this.channel4.splice(i,1)
+      }
+    }
+    for(let i=0; i<this.channel5.length; i++){
+      if(this.channel5[i].id==this.vertualBasket[index].id){
+        this.remainingValue=this.remainingValue+this.channel5[i].budget
+        this.channel5.splice(i,1)
+      }
+    }
+    for(let i=0; i<this.channel6.length; i++){
+      if(this.channel6[i].id==this.vertualBasket[index].id){
+        this.remainingValue=this.remainingValue+this.channel6[i].budget
+        this.channel6.splice(i,1)
+      }
+    }
+    
+    if(this.channel1.length<3){
+      this.weekWiseTable.map((item:any)=>{
+        const getValue=this.channel1.find((chItem:any)=>chItem.id==item.id)
+        if(!getValue && item.channel=="01"){
+          item.selected=false
+          console.log(getValue);
+        }
+      })
+    }
+    if(this.channel2.length<3){
+      this.weekWiseTable.map((item:any)=>{
+        const getValue2=this.channel2.find((chItem:any)=>chItem.id==item.id)
+        if(!getValue2 && item.channel=="02"){
+          item.selected=false
+          console.log(getValue2);
+        }
+      })
+    }
+    if(this.channel3.length<3){
+      this.weekWiseTable.map((item:any)=>{
+        const getValue3=this.channel3.find((chItem:any)=>chItem.id==item.id)
+        if(!getValue3 && item.channel=="03"){
+          item.selected=false
+          console.log(getValue3);
+        }
+      })
+    }
+    if(this.channel4.length<3){
+      this.weekWiseTable.map((item:any)=>{
+        const getValue4=this.channel4.find((chItem:any)=>chItem.id==item.id)
+        if(!getValue4 && item.channel=="04"){
+          item.selected=false
+          console.log(getValue4);
+        }
+      })
+    }
+    if(this.channel5.length<3){
+      this.weekWiseTable.map((item:any)=>{
+        const getValue5=this.channel5.find((chItem:any)=>chItem.id==item.id)
+        if(!getValue5 && item.channel=="05"){
+          item.selected=false
+          console.log(getValue5);
+        }
+      })
+    }
+    if(this.channel6.length<3){
+      this.weekWiseTable.map((item:any)=>{
+        const getValue6=this.channel6.find((chItem:any)=>chItem.id==item.id)
+        if(!getValue6 && item.channel=="06"){
+          item.selected=false
+          console.log(getValue6);
+        }
+      })
+    }
+    if(this.remainingValue==this.avgPerItem){
+      this.remainingValue=0
+    }
+    this.vertualBasket.splice(index, 1)
+    this.dataSource1= new MatTableDataSource<any>(this.weekWiseTable);
+    this.dataSource2= new MatTableDataSource<any>(this.vertualBasket);
+    this.resetPagination()
   }
   pageEvent:any
   onPaginateChange(event:any){
@@ -190,6 +314,7 @@ export class HomeComponent implements OnInit {
           this.calculations(data)
           if (this.channel1.length == 3){
             this.disableIfGreaterThan3(data)
+            
           }
         }
         if (data.channel == '02' && this.channel2.length < 3) {
@@ -236,7 +361,7 @@ export class HomeComponent implements OnInit {
         temp = [...this.channel1, ...this.channel2, ...this.channel3, ...this.channel4, ...this.channel5, ...this.channel6]
         this.vertualBasket = temp
         console.log(temp);
-        this.dataSource2 = this.vertualBasket
+        this.dataSource2 = new MatTableDataSource<any>(this.vertualBasket);
       }
     } else {
       this.openDialog()
