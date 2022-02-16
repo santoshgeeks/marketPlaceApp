@@ -19,37 +19,37 @@ export class HomeComponent implements OnInit {
         { id:"ID1week1", channel: "01", item: "Actor1",
          selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
         { id:"ID2week1", channel: "01", item: "Actor2", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID3week1", channel: "01", item: "Acto3", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID4week1", channel: "01", item: "Actor4", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID5week1", channel: "01", item: "Actor5", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID6week1", channel: "01", item: "Actor6", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID7week1", channel: "02", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID8week1", channel: "02", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID9week1", channel: "02", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID10week1", channel: "02", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID11week1", channel: "03", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID12week1", channel: "03", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID13week1", channel: "03", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID14week1", channel: "03", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID3week1", channel: "01", item: "Acto3", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 10 },
+        { id:"ID4week1", channel: "01", item: "Actor4", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 250 },
+        { id:"ID5week1", channel: "01", item: "Actor5", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 350 },
+        { id:"ID6week1", channel: "01", item: "Actor6", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 20 },
+        { id:"ID7week1", channel: "02", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 30 },
+        { id:"ID8week1", channel: "02", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 200 },
+        { id:"ID9week1", channel: "02", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 10 },
+        { id:"ID10week1", channel: "02", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 15 },
+        { id:"ID11week1", channel: "03", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 140 },
+        { id:"ID12week1", channel: "03", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 110 },
+        { id:"ID13week1", channel: "03", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 120 },
+        { id:"ID14week1", channel: "03", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 100 },
         
-        { id:"ID15week1", channel: "04", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID16week1", channel: "04", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID17week1", channel: "04", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID18week1", channel: "04", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID19week1", channel: "04", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID15week1", channel: "04", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 110 },
+        { id:"ID16week1", channel: "04", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 120 },
+        { id:"ID17week1", channel: "04", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 140 },
+        { id:"ID18week1", channel: "04", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 160 },
+        { id:"ID19week1", channel: "04", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 170 },
         
-        { id:"ID20week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID21week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID22week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID23week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID24week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID20week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 110 },
+        { id:"ID21week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 190 },
+        { id:"ID22week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 110 },
+        { id:"ID23week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 130 },
+        { id:"ID24week1", channel: "05", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 110 },
         
-        { id:"ID25week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID26week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID27week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID28week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID29week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
-        { id:"ID30week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 150 },
+        { id:"ID25week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 340 },
+        { id:"ID26week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 120 },
+        { id:"ID27week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 120 },
+        { id:"ID28week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 110 },
+        { id:"ID29week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 30 },
+        { id:"ID30week1", channel: "06", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 50 },
       
       ]
     },
@@ -174,7 +174,6 @@ export class HomeComponent implements OnInit {
         this.weekWiseTable[i].selected = true
       }
     }
-    console.log(this.weekWiseTable);
     this.totalBudgetAdded += data.budget
     this.avgPerItemspent = this.avgPerItem - this.totalBudgetAdded
     this.remainingValue = this.avgPerItemspent
@@ -203,37 +202,37 @@ export class HomeComponent implements OnInit {
   removeBasket(index:any,data:any){
     for(let i=0; i<this.channel1.length; i++){
       if(this.channel1[i].id==this.vertualBasket[index].id){
-        this.remainingValue=this.remainingValue+this.channel1[i].budget
+        this.remainingValue=this.remainingValue+this.vertualBasket[index].budget
         this.channel1.splice(i,1)
       }
     }
    for(let i=0; i<this.channel2.length; i++){
       if(this.channel2[i].id==this.vertualBasket[index].id){
-        this.remainingValue=this.remainingValue+this.channel2[i].budget
+        this.remainingValue=this.remainingValue+this.vertualBasket[index].budget
         this.channel2.splice(i,1)
       }
     }
     for(let i=0; i<this.channel3.length; i++){
       if(this.channel3[i].id==this.vertualBasket[index].id){
-        this.remainingValue=this.remainingValue+this.channel3[i].budget
+        this.remainingValue=this.remainingValue+this.vertualBasket[index].budget
         this.channel3.splice(i,1)
       }
     }
     for(let i=0; i<this.channel4.length; i++){
       if(this.channel4[i].id==this.vertualBasket[index].id){
-        this.remainingValue=this.remainingValue+this.channel4[i].budget
+        this.remainingValue=this.remainingValue+this.vertualBasket[index].budget
         this.channel4.splice(i,1)
       }
     }
     for(let i=0; i<this.channel5.length; i++){
       if(this.channel5[i].id==this.vertualBasket[index].id){
-        this.remainingValue=this.remainingValue+this.channel5[i].budget
+        this.remainingValue=this.remainingValue+this.vertualBasket[index].budget
         this.channel5.splice(i,1)
       }
     }
     for(let i=0; i<this.channel6.length; i++){
       if(this.channel6[i].id==this.vertualBasket[index].id){
-        this.remainingValue=this.remainingValue+this.channel6[i].budget
+        this.remainingValue=this.remainingValue+this.vertualBasket[index].budget
         this.channel6.splice(i,1)
       }
     }
@@ -294,7 +293,10 @@ export class HomeComponent implements OnInit {
     }
     if(this.remainingValue==this.avgPerItem){
       this.remainingValue=0
-    }
+      this.totalBudgetAdded =0
+      this.avgPerItemspent = 0
+      this.remainingValue = 0
+      }
     this.vertualBasket.splice(index, 1)
     this.dataSource1= new MatTableDataSource<any>(this.weekWiseTable);
     this.dataSource2= new MatTableDataSource<any>(this.vertualBasket);
