@@ -1,0 +1,195 @@
+<div class="row">
+    <div class="col-lg col-md">
+        <div class="heading">
+            Find Basket
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-11 filterBg">
+        <div class="row">
+            <div class="col-md">
+                <form class="example-form">
+                    <input type="text" placeholder="Search By Item" aria-label="Number"
+                     matInput [formControl]="searchByItemControl"
+                        [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                            {{option}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </form>
+                <!-- <input type="text" placeholder="Search By Item"> -->
+            </div>
+            <div class="col-md">
+                <input [(ngModel)]="byValue"  (keypress)="onlyNumberKey($event)" type="text" placeholder="Select By Value">
+            </div>
+            <div class="col-md">
+                <input [(ngModel)]="byWeight"  (keypress)="onlyNumberKey($event)" type="text" placeholder="Select By Weight">
+            </div>
+            <div class="col-md-3">
+                <button class="yllowButton" (click)="search()">Search</button>
+                <button class="yellowRoundButton ms-3" (click)="clear()">Clear</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 pe-0">
+        <div class="second-heading">My Basket</div>
+        <div class="row">
+            <table mat-table [dataSource]="basketDetails" class="w-100">
+                <ng-container matColumnDef="channel">
+                    <th mat-header-cell *matHeaderCellDef> Channel </th>
+                    <td mat-cell *matCellDef="let element"> {{element.channel}} </td>
+                </ng-container>
+                <ng-container matColumnDef="item">
+                    <th mat-header-cell *matHeaderCellDef> Item </th>
+                    <td mat-cell *matCellDef="let element"> {{element.basketName}} </td>
+                </ng-container>
+                <ng-container matColumnDef="cost">
+                    <th mat-header-cell *matHeaderCellDef> Cost </th>
+                    <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsmyBasket"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsmyBasket;let i= index"
+                    (click)="selectBaket(row,i)"></tr>
+            </table>
+        </div>
+        <div class="row py-2 valueArea">
+            <div class="col-6 ps-1">
+                <div class="valueLabel">Basket Value :</div>
+            </div>
+            <div class="col-6">
+                <div class="bvalue">$ {{basketValue}} </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="second-heading">
+            My Opp
+        </div>
+        <div class="row">
+            <table mat-table [dataSource]="dataSourceMyOpp" class="w-100">
+                <ng-container matColumnDef="springCollection">
+                    <th mat-header-cell *matHeaderCellDef> Spring Collection </th>
+                    <td mat-cell *matCellDef="let element"> {{element.springCollection}} </td>
+                </ng-container>
+                <ng-container matColumnDef="weight">
+                    <th mat-header-cell *matHeaderCellDef> Weight </th>
+                    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsMyopp"></tr>
+                <tr [ngClass]="{'active': i==indexValue}" (click)="selectOps(row,i)" mat-row
+                    *matRowDef="let row; columns: displayedColumnsMyopp;let i= index"></tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-2 p-0">
+        <div class="second-heading">
+            Selected Basket
+        </div>
+        <div class="row">
+            <table mat-table [dataSource]="dataSourceSelectedbasket" class="w-100">
+                <ng-container matColumnDef="channel">
+                    <th mat-header-cell *matHeaderCellDef> Channel</th>
+                    <td mat-cell *matCellDef="let element"> {{element.channel}} </td>
+                </ng-container>
+                <ng-container matColumnDef="item">
+                    <th mat-header-cell *matHeaderCellDef> item </th>
+                    <td mat-cell *matCellDef="let element"> {{element.item}} </td>
+                </ng-container>
+                <ng-container matColumnDef="cost">
+                    <th mat-header-cell *matHeaderCellDef> Cost </th>
+                    <td mat-cell *matCellDef="let element"> {{element.budget}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsSelectedbasket"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsSelectedbasket;let i= index"></tr>
+            </table>
+        </div>
+        <div class="row py-2 valueArea">
+            <div class="col-8 ps-1">
+                <div class="valueLabel">Basket Value :</div>
+            </div>
+            <div class="col-4">
+                <div class="bvalue">${{basketValueForSelected}} </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="second-heading">
+            Weight
+        </div>
+        <div class="row">
+            <table mat-table [dataSource]="dataSourceWeight" class="w-100">
+                <ng-container matColumnDef="min">
+                    <th mat-header-cell *matHeaderCellDef> Min</th>
+                    <td mat-cell *matCellDef="let element"></td>
+                </ng-container>
+                <ng-container matColumnDef="max">
+                    <th mat-header-cell *matHeaderCellDef style="padding-left: 54px;"> Max </th>
+                    <td mat-cell *matCellDef="let element"> </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsWeight"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsWeight;"></tr>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-md p-0 weightInputs">
+                <input type="text">
+            </div>
+            <div class="col-md-1 dash">-</div>
+            <div class="col-md p-0 weightInputs">
+                <input type="text">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 ps-0">
+        <div class="second-heading">Reciept</div>
+        <div class="row">
+            <table mat-table [dataSource]="dataSourceReciept" class="w-100">
+                <ng-container matColumnDef="basketName">
+                    <th mat-header-cell *matHeaderCellDef> Basket Name</th>
+                    <td mat-cell *matCellDef="let element">
+                        {{element.basketName}}
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="myOpp">
+                    <th mat-header-cell *matHeaderCellDef> My Opp </th>
+                    <td mat-cell *matCellDef="let element">{{element.myopp}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Weight">
+                    <th mat-header-cell *matHeaderCellDef> Weight </th>
+                    <td mat-cell *matCellDef="let element">{{element.weight}} </td>
+                </ng-container>
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef> </th>
+                    <td mat-cell *matCellDef="let element; let i=index" (click)="deleteReciepts(i)">
+                        <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsReciept"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsReciept;"></tr>
+            </table>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="deposit">
+                <span>Deposit:</span>
+                <span class="Dvalue">
+                    12,586 $
+                </span>
+            </div>
+            <div class="outcome">
+                <span class="text">Outcome:</span>
+                <span class="Ovalue">0.00 $</span>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12 text-end pe-1">
+                <button class="greenButton">Proceed</button>
+            </div>
+        </div>
+    </div>
+</div>

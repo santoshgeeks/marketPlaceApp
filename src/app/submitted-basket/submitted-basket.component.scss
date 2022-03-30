@@ -1,0 +1,155 @@
+.heading{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.second-heading{
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #116e51;
+}
+.filterBg{
+    background-color: #373737;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+input[type='text']{
+    background: #373737;
+}
+.yllowButton{
+    width: 100px;
+    margin-top: 10px;
+}
+.weightInputs{
+    input[type="text"]{
+        background: #c7b338;
+        color: #282828;
+        border-radius: 5px;
+        border: none;
+    }
+    
+}
+.dash{
+    margin: auto;
+    font-size: 20px;
+    margin-right: 7px;
+    font-weight: 700;
+    color: white;
+}
+:host::ng-deep.mat-table {
+    background: #373737;
+    margin-top: 20px;
+    thead {
+        background: #116e51;
+        position: sticky;
+        top: 0;
+
+        tr.mat-header-row {
+            height: 41px;
+
+            .mat-header-cell {
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                color: white;
+                font-weight: 600;
+                letter-spacing: 1px;
+                font-size: 12px;
+                padding-left: 5px;
+            }
+            .mat-header-cell:last-of-type{
+                padding-right: 5px;
+            }
+        }
+    }
+
+    tbody {
+
+        tr.mat-row,
+        tr.mat-footer-row {
+            height: 38.5px;
+           
+        }
+        
+        tr {
+            td {
+                color: white;
+                border-bottom: 1px solid gray;
+                font-size: 12px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+            .mat-cell:first-of-type {
+                padding-left: 5px;
+            }
+            .mat-cell:last-of-type {
+                padding-left: 5px;
+            }
+        }
+        tr:hover {
+            td {
+                background: #ffe64f;
+                color: #282828;
+            }
+        }
+        .active{
+            background: #ffe64f;
+            color: #282828;
+        }
+    }
+}
+.valueLabel{
+    font-size: 14px;
+    color: white;
+}
+.bvalue{
+    font-size: 14px;
+    color: #8d7b0f;
+    text-align: end;
+}
+.valueArea{
+    background: #373737;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+   
+
+}
+.deposit{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid #116e51;
+    color: white;
+    .Dvalue{
+        border-radius: 5px;
+        border: 1px solid white;
+        height: 30px;
+        color: white;
+    padding: 5px;
+    }
+}
+
+.outcome{
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 50px;
+font-size: 14px;
+.text{
+    color: white;
+}
+.Ovalue{
+  font-size: 14px;
+  color: #8d7b0f;
+}
+}
+.fa-times-circle-o{
+    font-size: 14px;
+    color: #8d7b0f;
+}

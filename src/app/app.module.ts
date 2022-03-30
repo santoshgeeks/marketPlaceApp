@@ -16,15 +16,20 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PopupComponent } from './popup/popup.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { SubmittedBasketComponent } from './submitted-basket/submitted-basket.component';
+// import { BasketComponent } from './basket/basket.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RecieptHistoryComponent,
-    PopupComponent
+    PopupComponent,
+    SubmittedBasketComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +37,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatToolbarModule,
     MatDialogModule,
     MatIconModule,
+    MatAutocompleteModule,
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
@@ -41,7 +47,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatPaginatorModule,
     MatTableModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatSnackBarModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

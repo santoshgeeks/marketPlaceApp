@@ -29,14 +29,16 @@
 <div class="row mx-0">
   <mat-drawer-container class="container w-100 px-0" autosize>
     <mat-drawer #drawer mode="side" opened class="sidenav bgGreen" mode="side">
-      <div class="nav-items mt-1" routerLink="home" routerLinkActive="nav-items-active">
-        <div class="row w-100 pt-2">
+      <div class="nav-items mt-1" [routerLinkActiveOptions]="{exact: true}" 
+       routerLinkActive="nav-items-active">
+        <div class="row w-100 pt-2" routerLink="home">
           <div class="col-2 pe-0">
             <i class="fa fa-home whiteColor" aria-hidden="true"></i>
           </div>
-          <div class="col-10">
+          <div class="col-10" >
             <span class="whiteColor">Home Page</span>
           </div>
+          <!-- <div class="col-10" routerLink="home/selected-basket"></div> -->
         </div>
       </div>
       <div class="nav-items mt-1" routerLink="recieptHistory" routerLinkActive="nav-items-active">

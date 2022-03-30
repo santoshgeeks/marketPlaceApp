@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DatePipe } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,6 +14,7 @@ export class HomeComponent implements OnInit {
   avgPerItem = 1000
   remainingValue = 0
   weekSelection=false
+  basketName=""
   weekWiseData: any = [
     {
       weekName: "Week 1", isWeekSelected: false, data: [
@@ -138,7 +140,10 @@ export class HomeComponent implements OnInit {
   selectedweekAndMonth:any
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
 
-  constructor(public dialog: MatDialog) { 
+  constructor(
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar
+    ) { 
     var datePipe = new DatePipe("en-US");
     let month = datePipe.transform(new Date(), 'MMMM');
     let year= new Date().getFullYear()
@@ -148,7 +153,7 @@ export class HomeComponent implements OnInit {
     const dialogRef = this.dialog.open(PopupComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      // console.log(`Dialog result: ${result}`);
     });
   }
   selectWeek(weekList: any, index: any) {
@@ -242,7 +247,7 @@ export class HomeComponent implements OnInit {
         const getValue=this.channel1.find((chItem:any)=>chItem.id==item.id)
         if(!getValue && item.channel=="01"){
           item.selected=false
-          console.log(getValue);
+          // console.log(getValue);
         }
       })
     }
@@ -251,7 +256,7 @@ export class HomeComponent implements OnInit {
         const getValue2=this.channel2.find((chItem:any)=>chItem.id==item.id)
         if(!getValue2 && item.channel=="02"){
           item.selected=false
-          console.log(getValue2);
+          // console.log(getValue2);
         }
       })
     }
@@ -260,7 +265,7 @@ export class HomeComponent implements OnInit {
         const getValue3=this.channel3.find((chItem:any)=>chItem.id==item.id)
         if(!getValue3 && item.channel=="03"){
           item.selected=false
-          console.log(getValue3);
+          // console.log(getValue3);
         }
       })
     }
@@ -269,7 +274,7 @@ export class HomeComponent implements OnInit {
         const getValue4=this.channel4.find((chItem:any)=>chItem.id==item.id)
         if(!getValue4 && item.channel=="04"){
           item.selected=false
-          console.log(getValue4);
+          // console.log(getValue4);
         }
       })
     }
@@ -278,7 +283,7 @@ export class HomeComponent implements OnInit {
         const getValue5=this.channel5.find((chItem:any)=>chItem.id==item.id)
         if(!getValue5 && item.channel=="05"){
           item.selected=false
-          console.log(getValue5);
+          // console.log(getValue5);
         }
       })
     }
@@ -287,7 +292,7 @@ export class HomeComponent implements OnInit {
         const getValue6=this.channel6.find((chItem:any)=>chItem.id==item.id)
         if(!getValue6 && item.channel=="06"){
           item.selected=false
-          console.log(getValue6);
+          // console.log(getValue6);
         }
       })
     }
@@ -304,11 +309,11 @@ export class HomeComponent implements OnInit {
   }
   pageEvent:any
   onPaginateChange(event:any){
-    console.log(event);
+    // console.log(event);
     
   }
   addIntoVertualBasket(data: any, index: any) {
-    console.log(data);
+    // console.log(data);
     if (data.budget < this.remainingValue || this.remainingValue == 0) {
       if (this.totalBudgetAdded < this.avgPerItem) {
         if (data.channel == '01' && this.channel1.length < 3) {
@@ -321,7 +326,7 @@ export class HomeComponent implements OnInit {
         }
         if (data.channel == '02' && this.channel2.length < 3) {
           this.channel2.push(data)
-          console.log(index);
+          // console.log(index);
           this.calculations(data)
           if (this.channel2.length == 3){
             this.disableIfGreaterThan3(data)
@@ -329,7 +334,7 @@ export class HomeComponent implements OnInit {
            
         }
         if (data.channel == '03' && this.channel3.length < 3) {
-          console.log(index);
+          // console.log(index);
           this.channel3.push(data)
           this.calculations(data)
           if (this.channel3.length == 3){
@@ -362,7 +367,7 @@ export class HomeComponent implements OnInit {
         let temp = []
         temp = [...this.channel1, ...this.channel2, ...this.channel3, ...this.channel4, ...this.channel5, ...this.channel6]
         this.vertualBasket = temp
-        console.log(temp);
+        // console.log(temp);
         this.dataSource2 = new MatTableDataSource<any>(this.vertualBasket);
       }
     } else {
@@ -406,6 +411,35 @@ export class HomeComponent implements OnInit {
     this.channel5 = []
     this.channel6 = []
     this.resetPagination()
+  }
+  submitted=false
+  backtoHome(){
+    this.submitted=false
+  }
+  basketDetails:any=[]
+  submit(){
+    
+    this.basketDetails=[]
+    let cost=0
+    for(let i=0; i<this.vertualBasket.length; i++){
+      cost+=this.vertualBasket[i].budget
+    }
+    let tempBasketDetailsJson={
+      basketName:this.basketName,
+      basketData:this.vertualBasket,
+      channel:"",
+      cost:cost
+    }
+    if(this.basketName!=""){
+      this.submitted=true
+      this.basketDetails.push(tempBasketDetailsJson)
+    }else{
+      this._snackBar.open("Basket Name can't be empty", "Ok",{
+        duration:1000
+      })
+    }
+  
+    
   }
   ngOnInit(): void {
   }

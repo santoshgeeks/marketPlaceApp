@@ -1,15 +1,18 @@
-input[type='text'] {
-    outline: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 2px solid #116e51;
-    background: #282828;
-    color: white;
-    width: 100%;
-    padding-left: 0;
-}
 
+.backtohome{
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 115px;
+    padding: 0;
+}
+.backtohome:hover{
+    color: #c7b338;
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 0;
+    width: 115px;
+}
 .date {
     position: relative;
 
@@ -130,7 +133,7 @@ input[type='text'] {
     }
 }
 
-::ng-deep.mat-table {
+:host::ng-deep.mat-table {
     background: #373737;
 
     thead {
@@ -167,12 +170,16 @@ input[type='text'] {
                 font-size: 16px;
             }
         }
+        tr:hover {
+            td {
+                background: #ffe64f;
+                color: #282828;
+            }
+        }
+      
     }
 }
-tr.mat-row:hover{
-    background: #ffe64f;
-    color: white;
-}
+
 .disable{
     background: #c9c9c9;
     pointer-events: none;
@@ -239,48 +246,7 @@ mat-paginator {
     font-weight: 600;
 }
 
-.yllowButton {
-    background: #c7b338;
-    outline: none;
-    border: navajowhite;
-    border-radius: 5px;
-    color: #282828;
-    font-weight: 400;
-    height: 30px;
-}
 
-.greenButton {
-    background: #116e51;
-    outline: none;
-    border: #116e51;
-    border-radius: 5px;
-    color: white;
-    font-weight: 400;
-    height: 33px;
-    padding: 0px 20px 0px 20px;
-}
-
-.yellowRoundButton {
-    background: #282828;
-    outline: none;
-    border: 1px solid #c7b338;
-    border-radius: 5px;
-    color: #c7b338;
-    font-weight: 400;
-    height: 33px;
-    padding: 0px 20px 0px 20px;
-}
-
-.yellowRoundButton:hover {
-    background: #c7b338;
-    outline: none;
-    border: 1px solid #282828;
-    border-radius: 5px;
-    color: #282828;
-    font-weight: 400;
-    height: 33px;
-    padding: 0px 20px 0px 20px;
-}
 
 .averageItem {
     color: white;
@@ -319,19 +285,19 @@ mat-paginator {
 
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: white;
+    color: rgb(224 224 224 / 26%);
     opacity: 1;
     /* Firefox */
 }
 
 :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
-    color: white;
+    color: rgb(224 224 224 / 26%);
 }
 
 ::-ms-input-placeholder {
     /* Microsoft Edge */
-    color: white;
+    color: rgb(224 224 224 / 26%);
 }
 .nodata{
     text-align: center;
