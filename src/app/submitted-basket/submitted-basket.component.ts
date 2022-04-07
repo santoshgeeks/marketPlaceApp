@@ -138,7 +138,7 @@ export class SubmittedBasketComponent implements OnInit {
   constructor(
     private commonService: CommonService,
     private cdr: ChangeDetectorRef,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
   ) {
 
   }
@@ -261,6 +261,9 @@ export class SubmittedBasketComponent implements OnInit {
   selectBaket(data:any,index:any){
     console.log(data);
     
+  }
+  procideToOverView(){
+    this.commonService.proceedToOverview.next(true)
   }
 
 }

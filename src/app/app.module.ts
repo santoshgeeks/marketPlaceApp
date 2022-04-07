@@ -23,6 +23,8 @@ import { SubmittedBasketComponent } from './submitted-basket/submitted-basket.co
 // import { BasketComponent } from './basket/basket.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { OverViewComponent } from './over-view/over-view.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     RecieptHistoryComponent,
     PopupComponent,
     SubmittedBasketComponent,
+    OverViewComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

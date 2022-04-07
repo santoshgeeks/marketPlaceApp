@@ -5,6 +5,7 @@ import { DatePipe } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CommonService } from '../services/common.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -138,16 +139,25 @@ export class HomeComponent implements OnInit {
   totalBudgetAdded = 0
   avgPerItemspent = 0
   selectedweekAndMonth:any
+  overViewProceded=false
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
 
   constructor(
     public dialog: MatDialog,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private commonService:CommonService
     ) { 
     var datePipe = new DatePipe("en-US");
     let month = datePipe.transform(new Date(), 'MMMM');
     let year= new Date().getFullYear()
     this.selectedweekAndMonth=month+" "+year
+    this.commonService.proceedToOverview.subscribe((res:any)=>{
+      console.log(res);
+      this.overViewProceded=res
+      if(this.overViewProceded){
+        this.submitted=false
+      }
+    })
   }
   openDialog() {
     const dialogRef = this.dialog.open(PopupComponent);
@@ -416,6 +426,11 @@ export class HomeComponent implements OnInit {
   backtoHome(){
     this.submitted=false
   }
+
+  backtoHomeFromOverView(){
+    this.overViewProceded=false
+  }
+  
   basketDetails:any=[]
   submit(){
     
