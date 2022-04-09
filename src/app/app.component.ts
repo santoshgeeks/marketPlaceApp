@@ -23,4 +23,7 @@ export class AppComponent {
       }
   })
   }
+  logOut(){
+    this.router.navigateByUrl("/login")
+  }
 }
