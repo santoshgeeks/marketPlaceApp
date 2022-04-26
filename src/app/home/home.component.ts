@@ -63,20 +63,20 @@ export class HomeComponent implements OnInit {
         { id:"ID3week2", channel: "01", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 300 },
         { id:"ID4week2", channel: "01", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 300 },
         { id:"ID5week2", channel: "01", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 300 },
-        { id:"ID6week2", channel: "01", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 300 },
-        { id:"ID7week2", channel: "02", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 300 },
-        { id:"ID8week2", channel: "02", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 300 },
-        { id:"ID9week2", channel: "01", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
-        { id:"ID10week2", channel: "01", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
-        { id:"ID11week2", channel: "01", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
-        { id:"ID12week2", channel: "01", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
-        { id:"ID13week2", channel: "01", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
-        { id:"ID14week2", channel: "01", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
-        { id:"ID15week2", channel: "02", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
-        { id:"ID16week2", channel: "02", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
-        { id:"ID17week2", channel: "02", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
-        { id:"IDw18eek2", channel: "02", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
-        { id:"ID19week2", channel: "03", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
+        // { id:"ID6week2", channel: "01", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 300 },
+        // { id:"ID7week2", channel: "02", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 300 },
+        // { id:"ID8week2", channel: "02", item: "Actor", selected: false, office: "BJ", postal: "ZD", cripto: "05", budget: 300 },
+        // { id:"ID9week2", channel: "01", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
+        // { id:"ID10week2", channel: "01", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
+        // { id:"ID11week2", channel: "01", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
+        // { id:"ID12week2", channel: "01", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
+        // { id:"ID13week2", channel: "01", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
+        // { id:"ID14week2", channel: "01", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
+        // { id:"ID15week2", channel: "02", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
+        // { id:"ID16week2", channel: "02", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
+        // { id:"ID17week2", channel: "02", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
+        // { id:"IDw18eek2", channel: "02", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
+        // { id:"ID19week2", channel: "03", item: "Actress", selected: false, office: "BJ", postal: "BD", cripto: "05", budget: 300 },
 
       ]
     },
@@ -138,7 +138,7 @@ export class HomeComponent implements OnInit {
   channel6: any = []
   totalBudgetAdded = 0
   avgPerItemspent = 0
-  selectedweekAndMonth:any
+  selectedweekAndMonth:any=""
   overViewProceded=false
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
 
@@ -147,10 +147,7 @@ export class HomeComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private commonService:CommonService
     ) { 
-    var datePipe = new DatePipe("en-US");
-    let month = datePipe.transform(new Date(), 'MMMM');
-    let year= new Date().getFullYear()
-    this.selectedweekAndMonth=month+" "+year
+   
     this.commonService.proceedToOverview.subscribe((res:any)=>{
       console.log(res);
       this.overViewProceded=res
@@ -166,7 +163,9 @@ export class HomeComponent implements OnInit {
       // console.log(`Dialog result: ${result}`);
     });
   }
-  selectWeek(weekList: any, index: any) {
+  selectWeek(weekList: any, index: any,weekSelection:any) {
+    console.log(weekSelection);
+    
     this.dataSource1 = []
     var datePipe = new DatePipe("en-US");
     let month = datePipe.transform(new Date(), 'MMMM');

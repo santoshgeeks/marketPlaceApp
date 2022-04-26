@@ -2,7 +2,9 @@
     <div class="col-md-6">
         <div class="row mt-4 mb-3">
             <div class="col-5 date pe-0">
-                <input readonly type="text" value="week 2, Novenber 2022" [(ngModel)]="selectedweekAndMonth"
+                <input readonly type="text" 
+                placeholder="Select Week"
+                [(ngModel)]="selectedweekAndMonth"
                 [ngModelOptions]="{standalone:true}">
                 <i class="fa fa-calendar-o" (click)="weekSelection=!weekSelection" aria-hidden="true"></i>
             </div>
@@ -20,7 +22,7 @@
                     <div class="buttons">
                         <button [ngClass]="{'active': button.isWeekSelected}"
                          *ngFor="let button of weekWiseData; let i=index" 
-                        (click)="selectWeek(button, i); weekSelection=!weekSelection"
+                        (click)="selectWeek(button, i,weekSelection); weekSelection=!weekSelection"
                          class="my-2"> {{button.weekName}} </button>
                     </div>
                 </div>
@@ -44,7 +46,7 @@
                         <td mat-cell *matCellDef="let element" [ngClass]="{'disable': element.selected}" > {{element.postal}} </td>
                     </ng-container>
                     <ng-container matColumnDef="cripto">
-                        <th mat-header-cell *matHeaderCellDef> Cripto </th>
+                        <th mat-header-cell *matHeaderCellDef> Crypto </th>
                         <td mat-cell *matCellDef="let element" [ngClass]="{'disable': element.selected}" > {{element.cripto}} </td>
                     </ng-container>
                     <ng-container matColumnDef="budget">
@@ -65,9 +67,8 @@
                     Please select week
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12" [ngClass]="{'d-none': selectedweekAndMonth=='','d-flex': selectedweekAndMonth!=''}">
                 <mat-paginator [pageSizeOptions]="[10,15, 20]" showFirstLastButtons
-                
                 (page)="pageEvent = $event; onPaginateChange($event)">
                 </mat-paginator>
             </div>
@@ -97,7 +98,7 @@
 
             </div>
 
-            <div class="col-12 ps-0 tableCol">
+            <div class="col-12 ps-0 tableCol" style="margin-top: 8px;">
                 <table mat-table [dataSource]="dataSource2" class="w-100">
                     <ng-container matColumnDef="channel">
                         <th mat-header-cell *matHeaderCellDef> Channel </th>
@@ -116,7 +117,7 @@
                         <td mat-cell *matCellDef="let element"> {{element.postal}} </td>
                     </ng-container>
                     <ng-container matColumnDef="cripto">
-                        <th mat-header-cell *matHeaderCellDef> Cripto </th>
+                        <th mat-header-cell *matHeaderCellDef> Crypto </th>
                         <td mat-cell *matCellDef="let element"> {{element.cripto}} </td>
                     </ng-container>
                     <ng-container matColumnDef="budget">
@@ -135,7 +136,7 @@
                 </table>
                 <div class="row mt-3 setPositionAtbottomOfTable">
                     <div class="col-md-12 p-0 text-end">
-                        <button class="yellowRoundButton" (click)="clear()">Clear</button>
+                        <button style="margin-top: 10px;margin-bottom: 10px;" class="yellowRoundButton" (click)="clear()">Clear</button>
                         <button [disabled]="vertualBasket.length==0 && basketName==''" class="greenButton ms-2" (click)="submit()">Submit</button>
                     </div>
                 </div>

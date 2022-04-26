@@ -1,7 +1,8 @@
 <mat-toolbar class="mat-elevation-z5 bgGreen" [ngClass]="{'d-none':!loggedIn, 'd-flex':loggedIn}">
   <div class="brandName colorPurpule whiteColor">Market Place</div>
-  <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <i class="fa fa-bars whiteColor" aria-hidden="true" ></i>
+  <button (click)="drawer.toggle()" mat-icon-button class="example-icon"
+    aria-label="Example icon-button with menu icon">
+    <i class="fa fa-bars whiteColor" aria-hidden="true"></i>
   </button>
   <div class="user">
     <i class="fa fa-bell me-2 yellowColor" aria-hidden="true"></i>
@@ -29,15 +30,13 @@
 <div class="row mx-0">
   <mat-drawer-container class="container w-100 px-0" autosize>
     <mat-drawer #drawer mode="side" opened class="sidenav bgGreen" mode="side"
-    [ngClass]="{'d-none':!loggedIn, 'd-flex':loggedIn}"
-    >
-      <div class="nav-items mt-1" [routerLinkActiveOptions]="{exact: true}" 
-       routerLinkActive="nav-items-active">
+      [ngClass]="{'d-none':!loggedIn, 'd-flex':loggedIn}">
+      <div class="nav-items mt-1" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="nav-items-active">
         <div class="row w-100 pt-2" routerLink="home">
           <div class="col-2 pe-0">
             <i class="fa fa-home whiteColor" aria-hidden="true"></i>
           </div>
-          <div class="col-10" >
+          <div class="col-10">
             <span class="whiteColor">Home Page</span>
           </div>
         </div>
@@ -54,22 +53,22 @@
       </div>
     </mat-drawer>
     <div class="sidenav-content">
-      <div class="row bgDark">
+      <div class="w-100 bgDark rightHeight">
         <router-outlet></router-outlet>
       </div>
-      <mat-toolbar class="footer bgFooter"
-      [ngClass]="{'d-none':!loggedIn, 'd-flex':loggedIn}"
-      >
-        <div class="footerItemsSupport">
-          <div class="text">Contact</div>
-          <div class="text">Customer Support</div>
-          <div class="text">Products</div>
-          <div class="text">Dealer Extranet</div>
-        </div>
-        <div class="footerItemsCopyRight">
-          2021 Marketplace. All Rights Reserved
-        </div>
-      </mat-toolbar>
+      <div class="row">
+        <mat-toolbar class="footer bgFooter" [ngClass]="{'d-none':!loggedIn, 'd-flex':loggedIn}">
+          <div class="footerItemsSupport">
+            <div class="text">Contact</div>
+            <div class="text">Customer Support</div>
+            <div class="text">Products</div>
+            <div class="text">Dealer Extranet</div>
+          </div>
+          <div class="footerItemsCopyRight">
+            2021 Marketplace. All Rights Reserved
+          </div>
+        </mat-toolbar>
+      </div>
     </div>
   </mat-drawer-container>
 </div>

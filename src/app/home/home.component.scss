@@ -123,7 +123,7 @@
 }
 
 .tableCol {
-    height: 69vh;
+    max-height: 69vh;
     overflow-y: auto;
     position: relative;
     .setPositionAtbottomOfTable{

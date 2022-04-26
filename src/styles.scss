@@ -1,40 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; }
-*{
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+* {
     font-family: 'Urbanist', sans-serif;
     // font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-.row{
+
+.row {
     margin-left: 0px;
     margin-right: 0px;
 }
-.greenColor{
-    color: #116e51;
+
+.greenColor {
+    color: #216D56;
 }
-.yellowColor{
-    color: #c7b338;
+
+.yellowColor {
+    color: #C6B338;
 }
-.whiteColor{
+
+.whiteColor {
     color: #fcfdfd;
 }
-.bgDark{
-    background:#282828;
+
+.bgDark {
+    background: #282828;
+
 }
-.bgLightDark{
+
+.bgLightDark {
     background: #4a4a4a;
 }
-.bgGreen{
-    background: #116e51;
+
+.bgGreen {
+    background: #216D56;
 }
-.bgYellow{
+
+.bgYellow {
     background: #c7b338;
 }
-.bgFooter{
+
+.bgFooter {
     background: #1c1c1c;
 }
-.tableRowBg{
+
+.tableRowBg {
     background: #373737;
 }
 
@@ -71,40 +89,44 @@ body { margin: 0; }
 }
 
 .greenButton {
-    background: #116e51;
+    background: #216D56;
     outline: none;
-    border: #116e51;
+    border: #216D56;
     border-radius: 5px;
     color: white;
     font-weight: 400;
     height: 33px;
     padding: 0px 20px 0px 20px;
 }
+
 input[type='text'] {
     outline: none;
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 2px solid #116e51;
+    border-bottom: 2px solid #216D56;
     background: #282828;
     color: white;
     width: 100%;
-        height: 35px;
+    height: 35px;
     padding-left: 0;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 10px 0px 1px;
+    font-family: 'Urbanist', sans-serif !important;
 }
+
 input[type='text']:focus {
     outline: none;
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 2px solid #116e51;
+    border-bottom: 2px solid #216D56;
     background: #282828;
     color: white;
     width: 100%;
-        height: 35px;
+    height: 35px;
     padding-left: 0;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 10px 0px 1px;
+    font-family: 'Urbanist', sans-serif !important;
 }
 
 
@@ -113,83 +135,99 @@ input[type='number'] {
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 2px solid #116e51;
+    border-bottom: 2px solid #216D56;
     background: #282828;
     color: white;
     width: 100%;
-        height: 35px;
+    height: 35px;
     padding-left: 0;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 10px 0px 1px;
+    font-family: 'Urbanist', sans-serif !important;
 }
+
 input[type='number']:focus {
     outline: none;
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 2px solid #116e51;
+    border-bottom: 2px solid #216D56;
     background: #282828;
     color: white;
     width: 100%;
-        height: 35px;
+    height: 35px;
     padding-left: 0;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 10px 0px 1px;
+    font-family: 'Urbanist', sans-serif !important;
 }
-.form-select{
+
+.form-select {
     background-color: unset;
     border: none;
     border-radius: 0;
-    border-bottom: 2px solid #116e51;
+    border-bottom: 2px solid #216D56;
     color: white;
-        height: 35px;
+    height: 35px;
 }
-.form-select:focus{
+
+.form-select:focus {
     background-color: unset;
     border: none;
     border-radius: 0;
-    border-bottom: 2px solid #116e51;
+    border-bottom: 2px solid #216D56;
     outline: none;
     box-shadow: none;
-        height: 35px;
+    height: 35px;
 }
-option { 
-    background-color: #282828; 
-    color:white;
+
+option {
+    background-color: #282828;
+    color: white;
 }
-option:hover{ 
-    background-color: yellow!important; 
-    color:white;
-    a{
-        background-color: #116e51;
+
+option:hover {
+    background-color: yellow !important;
+    color: white;
+
+    a {
+        background-color: #216D56;
     }
 }
+
 ::-webkit-scrollbar {
     width: 7px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
     background: #f1f1f1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: #b3b1b1;
     border-radius: 5px
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
     background: #555;
-  }
-  ::placeholder {
-    color: gray!important;
-    opacity: 1; /* Firefox */
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: gray!important;
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-   color: gray!important;
-  }
+}
+
+::placeholder {
+    color: gray !important;
+    font-family: 'Urbanist', sans-serif !important;
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: gray !important;
+    font-family: 'Urbanist', sans-serif !important;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: gray !important;
+    font-family: 'Urbanist', sans-serif !important;
+}
